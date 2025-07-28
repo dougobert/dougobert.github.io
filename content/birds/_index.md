@@ -6,4 +6,4 @@ weight: 1
 menus: "main"
 ---
 
-{{< gallery dir="/images/birds" />}} {{< load-photoswipe >}}
+{{< gallery dir="images/birds" caption-position="none" />}} {{< load-photoswipe >}}

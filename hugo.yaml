@@ -30,7 +30,7 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
   ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -62,16 +62,16 @@ params:
     imageUrl: "images/profile-photo.png"
     imageWidth: 120
     imageHeight: 120
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
+    # buttons:
+    #   - name: Posts
+    #     url: posts
+    #   - name: Tags
+    #     url: tags
 
   # home-info mode
-  homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+  # homeInfoParams:
+  #   Title: "Hi there \U0001F44B"
+  #   Content: Welcome to my blog
 
   socialIcons:
     - name: facebook

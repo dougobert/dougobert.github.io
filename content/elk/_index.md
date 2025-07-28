@@ -6,4 +6,4 @@ weight: 1
 menus: "main"
 ---
 
-{{< gallery dir="/images/elk" />}} {{< load-photoswipe >}}
+{{< gallery dir="images/elk" caption-position="none" />}} {{< load-photoswipe >}}
