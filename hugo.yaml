@@ -3,6 +3,10 @@ languageCode: en-us
 title: Doug Obert Photography
 theme: ["PaperMod"]
 
+outputs:
+  home:
+    - HTML
+
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
@@ -107,7 +111,11 @@ params:
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
 menu:
-  # main:
+  main:
+    - identifier: gallery
+      name: Gallery
+      url: /gallery/
+      weight: 10
   #   - identifier: categories
   #     name: categories
   #     url: /categories/
