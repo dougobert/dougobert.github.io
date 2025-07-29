@@ -5,13 +5,13 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/gallery-grid.css">
 
-<nav aria-label="Breadcrumb" class="breadcrumb-nav" style="margin-bottom:1rem;">
-  <ol style="list-style:none;display:flex;flex-wrap:wrap;padding:0;margin:0;">
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
     <li><a href="{{ .Site.Home.RelPermalink }}">Home</a></li>
-    <li style="margin:0 0.5em;">/</li>
+    <li>/</li>
     <li><a href="{{ (site.GetPage "section" "gallery").RelPermalink }}">Gallery</a></li>
     {{ if ne .RelPermalink ((site.GetPage "section" "gallery").RelPermalink) }}
-      <li style="margin:0 0.5em;">/</li>
+      <li>/</li>
       <li aria-current="page">{{ .Title }}</li>
     {{ end }}
   </ol>
@@ -21,14 +21,15 @@
     {{ $p := . }}
     {{ with $p.Resources.Match "*.jpg" }}
       {{ $img := index . 0 }}
-      {{ $thumb := $img.Fit "400x400" }}
+      {{ $webp := $img.Process "webp" }}
+      {{ $thumb := $webp.Fit "400x400" }}
       <a class="gallery-item" href="{{ $p.RelPermalink }}">
-        <img class="gallery-thumb" src="{{ $thumb.RelPermalink }}" alt="{{ $p.Title }} thumbnail">
+        <img class="gallery-thumb" src="{{ $thumb.RelPermalink }}" alt="{{ $p.Title }} thumbnail" loading="lazy">
         <div class="gallery-title">{{ $p.Title }}</div>
       </a>
     {{ else }}
       <a class="gallery-item" href="{{ $p.RelPermalink }}">
-        <div class="gallery-thumb" style="background:#eee;display:flex;align-items:center;justify-content:center;">No image</div>
+        <div class="gallery-thumb gallery-thumb-placeholder">No image</div>
         <div class="gallery-title">{{ $p.Title }}</div>
       </a>
     {{ end }}
