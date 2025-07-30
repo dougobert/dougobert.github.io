@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Doug Obert Photography</title>
+    <link>https://dougobert.github.io/gallery/sunrise/</link>
+    <description>Recent content on Doug Obert Photography</description>
+    <generator>Hugo -- 0.147.7</generator>
+    <language>en-us</language>
+    <atom:link href="https://dougobert.github.io/gallery/sunrise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://dougobert.github.io/gallery/sunrise/colockum-sunrise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dougobert.github.io/gallery/sunrise/colockum-sunrise/</guid>
+      <description>&lt;p&gt;title: &amp;ldquo;Eagle with seaweed&amp;rdquo;
+buy_link: &amp;ldquo;&lt;a href=&#34;https://buy.stripe.com/test_7sYeVcayv3Zr5zhfthdwc00%22&#34;&gt;https://buy.stripe.com/test_7sYeVcayv3Zr5zhfthdwc00&amp;quot;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
