@@ -1,5 +1,5 @@
 ---
-title: "Gallery"
+title: "Sunrise"
 type: gallery
 headless: false
 ---
