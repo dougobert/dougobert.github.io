@@ -116,6 +116,10 @@ menu:
       name: Gallery
       url: /gallery/
       weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
   #   - identifier: categories
   #     name: categories
   #     url: /categories/
