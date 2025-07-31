@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Elk on Doug Obert Photography</title>
-    <link>https://dougobert.github.io/gallery/elk/</link>
+    <link>https://dougobert.github.io/tags/elk/</link>
     <description>Recent content in Elk on Doug Obert Photography</description>
     <generator>Hugo -- 0.147.7</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dougobert.github.io/gallery/elk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dougobert.github.io/tags/elk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Elk in forest</title>
       <link>https://dougobert.github.io/gallery/elk/42369901/</link>
