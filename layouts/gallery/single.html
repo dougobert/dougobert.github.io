@@ -8,6 +8,19 @@
 <article>
 
   <h1 class="page-header">{{ .Title }}</h1>
+
+  {{ $parent := .Parent }}
+  {{ $siblings := $parent.Pages }}
+  {{ $prev := .PrevInSection }}
+  {{ $next := .NextInSection }}
+  <div class="photo-nav-arrows">
+    {{ if $prev }}
+      <a class="photo-nav-arrow photo-nav-left" href="{{ $prev.RelPermalink }}" title="Previous photo" aria-label="Previous photo"></a>
+    {{ end }}
+    {{ if $next }}
+      <a class="photo-nav-arrow photo-nav-right" href="{{ $next.RelPermalink }}" title="Next photo" aria-label="Next photo"></a>
+    {{ end }}
+  </div>
   {{ with .Resources.Match "*.jpg" }}
   {{ $img := index . 0 }}
   {{ $webp := $img.Process "webp" }}
