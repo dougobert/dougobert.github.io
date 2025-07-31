@@ -1,3 +1,0 @@
----
-title: "Eagle in flight"
----

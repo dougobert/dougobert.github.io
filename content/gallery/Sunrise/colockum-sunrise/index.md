@@ -1,4 +1,6 @@
 ---
 title: "Colockum sunrise"
-buy_link: "https://buy.stripe.com/test_7sYeVcayv3Zr5zhfthdwc00"
+date: 2025-07-28
+tags: [sunrise]
+image: "/gallery/sunrise/colockum-sunrise/_MG_1943-Enhanced-SR.jpg"
 ---

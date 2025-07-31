@@ -19,12 +19,9 @@
 <div class="photo-gallery">
   {{ range .Pages }}
     {{ $p := . }}
-    {{ with $p.Resources.Match "*.jpg" }}
-      {{ $img := index . 0 }}
-      {{ $webp := $img.Process "webp" }}
-      {{ $thumb := $webp.Fit "400x400" }}
+    {{ if $p.Params.image }}
       <a class="gallery-item" href="{{ $p.RelPermalink }}">
-        <img class="gallery-thumb" src="{{ $thumb.RelPermalink }}" alt="{{ $p.Title }} thumbnail" loading="lazy">
+        <img class="gallery-thumb" src="{{ $p.Params.image }}" alt="{{ $p.Title }} thumbnail" loading="lazy">
         <div class="gallery-title">{{ $p.Title }}</div>
       </a>
     {{ else }}
