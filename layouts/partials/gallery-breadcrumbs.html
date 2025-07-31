@@ -1,0 +1,21 @@
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
+    <li><a href="{{ .Site.Home.RelPermalink }}">Home</a></li>
+    <li>/</li>
+    {{ $segments := split (trim .RelPermalink "/") "/" }}
+    {{ $url := .Site.Home.RelPermalink }}
+    {{ range $i, $segment := $segments }}
+      {{ if ne $segment "" }}
+        {{ $url = printf "%s%s/" $url $segment }}
+        <li>
+          {{ if lt (add $i 1) (len $segments) }}
+            <a href="{{ $url }}">{{ replace $segment "-" " " | title }}</a>
+          {{ else }}
+            <span aria-current="page">{{ replace $segment "-" " " | title }}</span>
+          {{ end }}
+        </li>
+        {{ if lt (add $i 1) (len $segments) }}<li>/</li>{{ end }}
+      {{ end }}
+    {{ end }}
+  </ol>
+</nav>

@@ -4,17 +4,7 @@
 <script src="https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.min.js" type="module"></script>
 
 <link rel="stylesheet" href="/css/gallery-grid.css">
-<nav aria-label="Breadcrumb" class="breadcrumb-nav">
-  <ol class="breadcrumb-list">
-    <li><a href="{{ .Site.Home.RelPermalink }}">Home</a></li>
-    <li style="margin:0 0.5em;">/</li>
-    <li><a href="{{ (site.GetPage " section" "gallery" ).RelPermalink }}">Gallery</a></li>
-    {{ with .CurrentSection }}
-    <li style="margin:0 0.5em;">/</li>
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ol>
-</nav>
+{{ partial "gallery-breadcrumbs.html" . }}
 <article>
 
   <h1 class="page-header">{{ .Title }}</h1>
@@ -38,6 +28,26 @@
     });
     lightbox.init();
   </script>
+
+  {{ if and $.Site.Params.ShowExifData ($img.Exif) }}
+    {{ with $img.Exif }}
+      {{ $hasExif := or (isset . "Model") (isset . "LensModel") (isset . "FocalLength") (isset . "Aperture") (isset . "ExposureTime") (isset . "ISO") (isset . "Date") }}
+      {{ if $hasExif }}
+        <section class="exif-data">
+          <h2>Photo Details</h2>
+          <ul>
+            {{ if isset . "Model" }}<li><strong>Camera:</strong> {{ .Model }}</li>{{ end }}
+            {{ if isset . "LensModel" }}<li><strong>Lens:</strong> {{ .LensModel }}</li>{{ end }}
+            {{ if isset . "FocalLength" }}<li><strong>Focal Length:</strong> {{ .FocalLength }} mm</li>{{ end }}
+            {{ if isset . "Aperture" }}<li><strong>Aperture:</strong> f/{{ .Aperture }}</li>{{ end }}
+            {{ if isset . "ExposureTime" }}<li><strong>Exposure:</strong> {{ .ExposureTime }} s</li>{{ end }}
+            {{ if isset . "ISO" }}<li><strong>ISO:</strong> {{ .ISO }}</li>{{ end }}
+            {{ if isset . "Date" }}<li><strong>Date Taken:</strong> {{ .Date }}</li>{{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    {{ end }}
+  {{ end }}
   {{ else }}
   <div class="gallery-thumb gallery-thumb-placeholder">No image found</div>
   {{ end }}
@@ -54,3 +64,5 @@
     {{- partial "share_icons.html" . -}}
   {{- end }}
   {{ end }}
+
+

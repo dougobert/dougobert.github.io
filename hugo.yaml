@@ -6,6 +6,8 @@ theme: ["PaperMod"]
 outputs:
   home:
     - HTML
+    - RSS
+    - JSON
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -29,6 +31,7 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
+  ShowExifData: true # set to false to disable Exif display
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
@@ -120,6 +123,9 @@ menu:
       name: About
       url: /about/
       weight: 20
+    - name: Search
+      url: search/
+      weight: 10
   #   - identifier: categories
   #     name: categories
   #     url: /categories/
