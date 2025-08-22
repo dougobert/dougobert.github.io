@@ -10,9 +10,21 @@
   <h1 class="page-header">{{ .Title }}</h1>
 
   {{ $parent := .Parent }}
-  {{ $siblings := $parent.Pages }}
-  {{ $prev := .PrevInSection }}
-  {{ $next := .NextInSection }}
+  {{ $siblings := $parent.Pages.ByTitle }}
+  {{ $currentIndex := 0 }}
+  {{ $prev := "" }}
+  {{ $next := "" }}
+  {{ range $index, $page := $siblings }}
+    {{ if eq $page.RelPermalink $.RelPermalink }}
+      {{ $currentIndex = $index }}
+      {{ if gt $index 0 }}
+        {{ $prev = index $siblings (sub $index 1) }}
+      {{ end }}
+      {{ if lt $index (sub (len $siblings) 1) }}
+        {{ $next = index $siblings (add $index 1) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   <div class="photo-nav-arrows">
     {{ if $prev }}
       <a class="photo-nav-arrow photo-nav-left" href="{{ $prev.RelPermalink }}" title="Previous photo" aria-label="Previous photo"></a>
